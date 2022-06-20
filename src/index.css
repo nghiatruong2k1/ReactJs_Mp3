@@ -1,13 +1,247 @@
-body {
+:root {
+  --blue: #0038ff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #fa3434;
+  --orange: #ff6a00;
+  --yellow: #ffc107;
+  --green: #00b517;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #e5e7ea;
+  --gray-dark: #343a40;
+  --primary: #ff6a00;
+  --secondary: #12225b;
+
+  --success: #00b517;
+  --successBg: #d9f9dd;
+  --info: #00aefd;
+  --infoBg: rgb(229, 246, 253);
+  --bell: #0288d1;
+  --bellBg: rgb(229, 246, 253);
+  --help: #0038ff;
+  --helpBg:rgb(229, 246, 253);
+  --warning: rgb(243 104 5);
+  --warningBg:rgb(255, 244, 229);
+  --danger: #fa3434;
+  --error: rgb(255 4 0);
+  --errorBg:rgb(253, 237, 237);
+
+  --light: #444;
+  --lightBg: #f6f7f9;
+  --dark: #fff;
+  --darkBg: #212529;
+
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1100px;
+  --font-family-sans-serif: "Inter", Arial, "Helvetica Neue", "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+ * {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  font-size: 1em;
+  vertical-align: baseline;
+  box-sizing: border-box !important;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+html{
+  font-size: 18px !important;
+}
+body {
+  line-height: 1.5;
+  font-size: 1rem !important;
+  margin: 0;
+  background-color: transparent !important;
+/*  font-family: 'MyWebFont';*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#root{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+button
+,[class*="Button"]{
+  text-transform: initial !important;
+}
+
+a:not([class*="Button"]){
+  text-decoration: none;
+  color: inherit !important;
+  cursor: pointer;
+}
+a:not([class*="Button"]):hover{
+  color: var(--info) !important;
+}
+[disabled]{
+  opacity: 0.5 !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: bold !important;
+  color: inherit !important;
+}
+
+h1, .h1 {
+  font-size: 2.5rem !important; }
+
+h2, .h2 {
+  font-size: 2rem !important; }
+
+h3, .h3 {
+  font-size: 1.75rem !important; }
+
+h4, .h4 {
+  font-size: 1.5rem !important; }
+
+h5, .h5 {
+  font-size: 1.25rem !important; }
+
+h6, .h6 {
+  font-size: 1.1rem !important; }
+small, .small{
+  font-size: 0.8rem !important;
+  line-height: 1.2em !important;
+}
+
+*[role="tooltip"]{
+  pointer-events: none !important;
+}
+.loading{
+  cursor: wait !important;
+  opacity: 0.7 !important;
+}
+[class*="Mui"]:not([class*="fa"]){
+  font-family: inherit !important;
+}
+[class*="MuiInputBase-input"]{
+  height: auto !important;
+}
+
+[class*="MuiListItemIcon-root"]{
+  padding: 0 0.2em !important;
+  min-width: auto !important;
+  justify-content: center;
+  align-items: center;
+  color: inherit !important;
+}
+[class*="MuiListItemText-root"]{
+  padding: 0 0.2em !important;
+}
+[class*="MuiInput"][readonly]{
+  background-color: rgba(0, 0, 0, 0.05)!important;
+}
+[class*="MuiListItemButton-"]{
+  padding: 0.1em 0.5em !important;
+  border-radius: 0.25em !important;
+}
+[class*="MuiAccordionSummary-content"]{
+  margin-top: 0.2em !important;
+  margin-bottom: 0.2em !important;
+}
+[class*="MuiStepConnector-horizontal"]{
+  padding: 0 0.5em;
+}
+
+[class*="MuiTableContainer-root"]{
+  overflow: auto;
+}
+
+[class*="MuiIconButton-root"]{
+  font-size: 1em !important;
+}
+
+[class*="MuiAvatar-"]{
+  font-size: 1em !important;
+  width: 1.8em !important;
+  height: 1.8em !important;
+}
+
+
+[class*="fa-"]:not([class*="active"]),
+[class*="fa-"]:not([class*="active"])::before,
+[class*="MuiSvgIcon-"]:not([class*="active"]){
+  color: inherit !important;
+}
+[class*="fa-"],
+[class*="fa-"]::before,
+[class*="MuiSvgIcon-"],
+[class*="MuiIcon-"]{
+  font-size: 1em !important;
+  width: 1em !important;
+  height: 1em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+[class*="MuiAlert-message"]{
+  flex: 1;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+
+*:-internal-autofill-selected{
+  background-color: transparent !important;
+  background-image: none !important;
+  color: inherit !important;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+}
+
+/**::-webkit-scrollbar {
+    height: 100% !important;
+    width: 0.6rem !important;
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 100rem !important;
+    background-color: var(--info) !important;
+}*/
+.text-box-1
+{
+  display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+
+.skeleton{
+  width: 100%;
+  height: 100%;
 }
